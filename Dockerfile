@@ -16,4 +16,4 @@ COPY routes/templates/base.jinja2 /usr/src/app/templates/
 EXPOSE 5000
 
 # run app
-CMD ["python", "usr/src/app/app.py"]
+CMD ["python", "usr/src/app/main.py"]
