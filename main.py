@@ -1,11 +1,14 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import os.path
 
+from flask import Flask
 
-# Press the green button in the gutter to run the script.
-# #####
+from routes import router
+
+app = Flask(__name__, template_folder="routes/templates")
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "random")
+
+app.register_blueprint(router)
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
+    app.run(port=os.getenv("FLASK_PORT", 5000))
 
