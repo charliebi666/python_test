@@ -2,18 +2,22 @@
 FROM alpine:3.5
 
 # Install python and pip
-RUN apk add -- update pip
+RUN apk update && \
+    apk add python3 py3-pip
+
+# Set working directory
+WORKDIR /usr/src/app
 
 # Install requirements
-COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # copy files to be run
-COPY main.py /usr/src/app/
-COPY routes/templates/base.jinja2 /usr/src/app/templates/
+COPY main.py .
+COPY routes/templates/base.jinja2 templates/
 
 # port number
 EXPOSE 5000
 
 # run app
-CMD ["python", "usr/src/app/main.py"]
+CMD ["python3", "main.py"]
