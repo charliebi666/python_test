@@ -17,4 +17,4 @@ COPY routes/templates/base.jinja2 templates/
 EXPOSE 5001
 
 # run app
-CMD ["python", "main.py"]
+CMD ["python3", "main.py"]
