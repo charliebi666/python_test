@@ -14,7 +14,7 @@ COPY test_app.py .
 COPY routes/templates/base.jinja2 templates/
 
 # port number
-EXPOSE 5000
+EXPOSE 5001
 
 # run app
 CMD ["python", "main.py"]
