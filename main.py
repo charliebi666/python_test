@@ -10,5 +10,5 @@ app.secret_key = os.getenv("FLASK_SECRET_KEY", "random")
 app.register_blueprint(router)
 #
 if __name__ == '__main__':
-    app.run(port=os.getenv("FLASK_PORT", 5002))
+    app.run(port=os.getenv("FLASK_PORT", 5001))
 
