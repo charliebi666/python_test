@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # copy files to be run
 COPY main.py .
 COPY test_app.py .
-COPY routes/templates/base.jinja2 templates/
+COPY routes /usr/src/app/routes
 
 # port number
 EXPOSE 5001
