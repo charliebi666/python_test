@@ -12,4 +12,6 @@ def homepage():
         # return render_template("base.jinja2", **request_context)
     return render_template("base.jinja2", **request_context)
 
+##
+
 
